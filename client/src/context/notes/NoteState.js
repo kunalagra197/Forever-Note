@@ -3,7 +3,7 @@ import { useState } from "react"
 // import { json } from "react-router-dom";
 const NoteState = (props) => {
 
-  const localhost = "http://localhost:5000"
+  const localhost = "https://forever-note.onrender.com"
   const notesInitial =[]
   const [notes, setNotes] = useState(notesInitial)
   //  Add a Note
