@@ -24,7 +24,7 @@ const Navbar=(props)=>{
 <nav className="navbar navbar-expand-lg navbar-dark" style={{"background-color":"black"}}>
   <div className="container-fluid">
     {/* <Link className="navbar-brand" style={{"font-family":"cursive"}} to="#">Forever Note</Link> */}
-    <Link class="navbar-brand" to="#">
+    <Link className="navbar-brand" to="#">
       <img src={logo} alt="..." height="inherit"/>
     </Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

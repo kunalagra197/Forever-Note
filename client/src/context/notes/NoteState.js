@@ -4,11 +4,12 @@ import { useState } from "react"
 const NoteState = (props) => {
 
   const localhost = "https://forever-note.onrender.com"
+  // const localhost="http://localhost:5000"
   const notesInitial =[]
   const [notes, setNotes] = useState(notesInitial)
   //  Add a Note
   
-  const addNote = async(title, description, tag) => {
+  const addNote = async(title, description, date) => {
     // TO DO API CALL
     const response = await fetch(`${localhost}/api/notes/addnote`, {
       method: 'POST',
@@ -16,7 +17,7 @@ const NoteState = (props) => {
         'content-type': 'application/json',
         'auth-token': localStorage.getItem('token')
       },
-      body:JSON.stringify({title,description,tag})
+      body:JSON.stringify({title,description,date})
     })
   
     const note=await response.json()
@@ -33,7 +34,7 @@ const NoteState = (props) => {
       }
     });
     const json=await response.json();
-    console.log(json)
+    // console.log(json)
     setNotes(json)
 
   
@@ -54,11 +55,11 @@ const NoteState = (props) => {
     const newNote = notes.filter((note) => {
       return note._id !== id;
     })
-    console.log(response)
+    // console.log(response)
     setNotes(newNote);
   }
   //  Edit a Note
-  const editNote = async (id, title, description, tag) => {
+  const editNote = async (id, title, description, date) => {
     // API call
     const response = await fetch(`${localhost}/api/notes/updatenote/${id}`, {
       method: 'PUT',
@@ -66,7 +67,7 @@ const NoteState = (props) => {
         'content-type': 'application/json',
         'auth-token': localStorage.getItem('token')
       },
-      body:JSON.stringify({title,description,tag})
+      body:JSON.stringify({title,description,date})
     })
 let newNotes=JSON.parse(JSON.stringify(notes))
     for (let index = 0; index < notes.length; index++) {
@@ -74,12 +75,12 @@ let newNotes=JSON.parse(JSON.stringify(notes))
       if (element._id === id) {
         newNotes[index].title = title;
         newNotes[index].description = description;
-        newNotes[index].tag = tag;
+        newNotes[index].date = date;
         break;
       }
     }
     const json=await response.json();
-    console.log(json)
+    // console.log(json)
     setNotes(newNotes)
   }
   return (

@@ -10,8 +10,8 @@ export const NotesItem = (props) => {
         <div className="col-md-3" >
             <div className="card my-3 bg-light" style={{"maxWidth":"18rem"}}>
                
-                    <div class="card-header"><h5>{note.title}</h5></div>
-                    <div class="card-body">
+                    <div className="card-header"><h5>{note.title}</h5></div>
+                    <div className="card-body">
                     <p className="card-text">{note.description}</p>
                     <i className="fa-solid fa-trash btn"  onClick={()=>{
                         deleteNote(note._id)
