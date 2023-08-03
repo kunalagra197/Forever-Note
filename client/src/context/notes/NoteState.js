@@ -3,7 +3,7 @@ import { useState } from "react"
 // import { json } from "react-router-dom";
 const NoteState = (props) => {
 
-  const localhost = "https://gold-embarrassed-butterfly.cyclic.cloud"
+  const localhost = "https://pink-donkey-veil.cyclic.cloud"
   // const localhost="http://localhost:5000"
   const notesInitial =[]
   const [notes, setNotes] = useState(notesInitial)

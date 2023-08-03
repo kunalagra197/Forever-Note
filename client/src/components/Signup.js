@@ -50,7 +50,7 @@ export const Signup = (props) => {
     if (credentials.password !== credentials.cpassword) {
       return props.showAlert("password does not match", "danger")
     }
-    const response = await fetch('https://gold-embarrassed-butterfly.cyclic.cloud/api/auth/createuser', {
+    const response = await fetch('https://pink-donkey-veil.cyclic.cloud/api/auth/createuser', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
